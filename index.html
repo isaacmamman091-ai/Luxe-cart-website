@@ -1,0 +1,175 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>LuxeCart | Timeless Elegance</title>
+    <!-- Google Fonts + Smooth -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 (free icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* style.css will be linked but inline works in combined approach? we create separate files concept but here for final output we embed but demonstration given as separate sections. 
+        Following instruction: Provide separate index.html, style.css, script.js. I will output them as three code blocks */
+    </style>
+</head>
+<body>
+    <!-- Full markup will be inside index.html, but we output all files separately -->
+</body>
+</html> -->
+
+<!-- Since we need to create actual separate files, I'll output each file in dedicated markdown blocks. 
+HTML: includes structure + references to CSS/JS. CSS: all styling. JS: cart logic + interactivity. -->
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>LuxeCart | Timeless Luxury</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="site-wrapper">
+        <!-- Navigation -->
+        <header class="luxe-header">
+            <div class="container nav-container">
+                <div class="logo">
+                    <span class="logo-icon">✦</span> LuxeCart
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Collections</a></li>
+                        <li><a href="#about">Maison</a></li>
+                        <li><a href="#contact">Concierge</a></li>
+                        <li><a href="#cart-section" class="cart-link">Cart (<span id="cart-count">0</span>)</a></li>
+                    </ul>
+                </nav>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content container">
+                <span class="hero-subtitle">LuxeCart Atelier</span>
+                <h1>Discover Luxury,<br> Shop With Confidence</h1>
+                <div class="hero-buttons">
+                    <a href="#products" class="btn btn-gold">Shop Now <i class="fas fa-arrow-right"></i></a>
+                    <a href="#contact" class="btn btn-outline">Contact Us</a>
+                </div>
+                <div class="hero-visual-touch">
+                    <!-- Decorative image hint: we use background but also floating elements -->
+                </div>
+            </div>
+            <div class="floating-luxury">
+                <div class="floating-item perfume"></div>
+                <div class="floating-item dresser"></div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="products-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Exceptional Selections</span>
+                    <h2>Signature Pieces</h2>
+                    <div class="gold-divider"></div>
+                </div>
+                <div class="products-grid" id="products-grid">
+                    <!-- Products injected via JS but fallback static, we'll build with JS for dynamic cart integration -->
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container about-container">
+                <div class="about-text">
+                    <span class="section-subtitle">Our Heritage</span>
+                    <h2>Where Craftsmanship Meets Elegance</h2>
+                    <p>LuxeCart curates the finest luxury essentials — from artisanal perfumes to heirloom-quality dressers. Every piece reflects a devotion to timeless beauty, sustainable excellence, and personalized service. We believe luxury is not just an object, but an experience.</p>
+                    <div class="about-stats">
+                        <div><span>5000+</span> Happy Clients</div>
+                        <div><span>100%</span> Authentic</div>
+                        <div><span>24/7</span> White Glove Support</div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="about-img-placeholder"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cart Section -->
+        <section id="cart-section" class="cart-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Your Cart <i class="fas fa-shopping-bag"></i></h2>
+                    <div class="gold-divider"></div>
+                </div>
+                <div class="cart-container">
+                    <div class="cart-items" id="cart-items-list">
+                        <div class="empty-cart-msg">Your cart is awaiting elegance ✨</div>
+                    </div>
+                    <div class="cart-summary">
+                        <h3>Cart Total</h3>
+                        <div class="total-amount">
+                            <span>Total:</span>
+                            <span id="cart-total-price">$0.00</span>
+                        </div>
+                        <button id="checkout-btn" class="btn btn-gold full-width">Checkout <i class="fas fa-lock"></i></button>
+                        <p class="secure-text"><i class="fas fa-shield-alt"></i> Secure payment & free express shipping</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container contact-grid">
+                <div class="contact-info">
+                    <h2>Concierge Service</h2>
+                    <p>Our luxury advisors are available to assist you.</p>
+                    <div class="contact-details">
+                        <div><i class="fas fa-phone-alt"></i> +1 (888) 567- LUXE</div>
+                        <div><i class="fas fa-envelope"></i> concierge@luxecart.com</div>
+                        <div><i class="fab fa-whatsapp"></i> <span>WhatsApp Order: +1 (212) 555 8920</span></div>
+                    </div>
+                    <a href="https://wa.me/12125558920?text=Hello%20LuxeCart%2C%20I%27d%20like%20to%20place%20an%20order" class="btn btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> Order via WhatsApp</a>
+                </div>
+                <div class="contact-map-preview">
+                    <div class="gold-accent-card">
+                        <i class="fas fa-gem"></i>
+                        <p>Boutique experience<br>Worldwide delivery</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-inner">
+                    <div class="footer-logo">LuxeCart <span>✦</span></div>
+                    <p>© 2025 LuxeCart — Timeless elegance, redefined.</p>
+                    <div class="social-icons">
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-facebook-f"></i>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+```
